@@ -56,11 +56,11 @@
             </div>
 
             <div class="chats">
-                <div class="chat d-flex justify-between" id="chat-1">
+                <div class="chat d-flex justify-between" id="chat-1" v-for="element in contacts">
                     <div class="d-flex">
-                        <img class="chat-user-img" src="img/avatar_1.jpg" alt="Img profile chat 1">
+                        <img class="chat-user-img" :src="`img/avatar${element.avatar}.jpg`" alt="Img profile chat 1">
                         <div class="chat-description">
-                            <p class="fw-500">Michele</p>
+                            <p class="fw-500">{{ element.name }}</p>
                             <p class="preview-message">Ultimo messaggio inviato</p>
                         </div>
                     </div>
