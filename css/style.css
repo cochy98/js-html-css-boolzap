@@ -16,7 +16,10 @@ body{
 
 .d-flex{display: flex;}
 .justify-between{justify-content: space-between;}
+.justify-center{justify-content: center;}
 .align-center{align-items: center;}
+
+.fw-500{font-weight: 500;}
 
 .background{
     height: 100vh;
@@ -73,12 +76,48 @@ main > .my-col-right{
 	margin-right: .5rem;
 }
 
-.user-bar > .user-bar-profile > span{
-    font-weight: 500;
-}
-
 .user-bar > .user-bar-controls > i{
     font-size: 1.3rem;
     color: #b1b1b1;
     padding: .4rem;
+}
+
+.my-col-left > .box-info-control{
+    background-color: #8edafc;
+    padding: .65rem;
+    font-size: .8rem;
+}
+
+.box-info-control > .icon {
+	width: 45px;
+	height: 45px;
+	background-color: white;
+	text-align: center;
+	line-height: 45px;
+	margin-right: .5rem;
+	border-radius: 50%;
+    font-size: 1.25rem;
+    color: #8edafc;
+}
+
+.box-info-control a{
+    color: #929191;
+}
+
+.my-col-left > .input-search {
+	margin: .4rem;
+	padding: .15rem;
+	border-radius: .25rem;
+	border: 1px solid rgb(242, 242, 242);
+}
+
+.input-search > .search-icon{
+    flex-basis: 20%;
+    color: #b1b1b1;
+}
+
+.input-search > input{
+    flex-basis: 80%;
+    padding: .4rem;
+    border: none;
 }
