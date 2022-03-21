@@ -53,26 +53,24 @@ main > .my-col-left, .my-col-right{
 }
 
 main > .my-col-left{
-    width: 30%;
+    width: 33%;
+    flex-direction: column;
     background-color: white;
-    border-right: 1px solid gray;
-}
-
-main > .my-col-left > .col-left-controls{
-    max-height: 30%;
+    border-right: 1px solid rgb(210, 206, 206);
 }
 
 main > .my-col-right{
-    width: 70%;
-    background-color: red;
+    width: 67%;
 }
 
-.my-col-left .user-bar{
+.my-col-left .user-bar,
+.my-col-right .chat-open-bar{
     background-color: #eaeaea;
-    padding: .5rem;
+    padding: .5rem 1rem .5rem .5rem;
 }
 
-.user-bar .user-bar-profile > img{
+.user-bar > .user-bar-profile > img,
+.chat-open-bar > .chat-open-profile > img{
 	width: 50px;
 	height: 50px;
 	object-fit: cover;
@@ -80,7 +78,8 @@ main > .my-col-right{
 	margin-right: .5rem;
 }
 
-.user-bar .user-bar-controls > i{
+.user-bar > .user-bar-controls > i,
+.chat-open-bar > .chat-open-controls > i{
     font-size: 1.3rem;
     color: #b1b1b1;
     padding: .4rem;
@@ -127,13 +126,12 @@ main > .my-col-right{
 }
 
 .my-col-left > .chats{
-    height: 70%;
     overflow-y: auto;
 }
 
 .chats > .chat{
     padding: .5rem;
-    border-bottom: 1px solid rgb(242, 242, 242);
+    border-top: 1px solid rgb(242, 242, 242);
 }
 
 .chats > .chat.active{
@@ -152,4 +150,9 @@ main > .my-col-right{
     font-size: .7rem;
     color: #b1b1b1;
     font-weight: 500;
+}
+
+.my-col-right > .chat-history{
+    height: calc(100% - 66px);
+    background-image: url(../img/mine.jpg);
 }
