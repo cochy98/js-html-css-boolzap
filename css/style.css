@@ -40,7 +40,7 @@ main{
     position: absolute;
     width: 80%;
     height: 90%;
-    min-width: 780px;
+    min-width: 870px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -58,17 +58,21 @@ main > .my-col-left{
     border-right: 1px solid gray;
 }
 
+main > .my-col-left > .col-left-controls{
+    max-height: 30%;
+}
+
 main > .my-col-right{
     width: 70%;
     background-color: red;
 }
 
-.my-col-left > .user-bar{
+.my-col-left .user-bar{
     background-color: #eaeaea;
     padding: .5rem;
 }
 
-.user-bar > .user-bar-profile > img{
+.user-bar .user-bar-profile > img{
 	width: 50px;
 	height: 50px;
 	object-fit: cover;
@@ -76,13 +80,13 @@ main > .my-col-right{
 	margin-right: .5rem;
 }
 
-.user-bar > .user-bar-controls > i{
+.user-bar .user-bar-controls > i{
     font-size: 1.3rem;
     color: #b1b1b1;
     padding: .4rem;
 }
 
-.my-col-left > .box-info-control{
+.my-col-left .box-info-control{
     background-color: #8edafc;
     padding: .65rem;
     font-size: .8rem;
@@ -104,7 +108,7 @@ main > .my-col-right{
     color: #929191;
 }
 
-.my-col-left > .input-search {
+.my-col-left .input-search {
 	margin: .4rem;
 	padding: .15rem;
 	border-radius: .25rem;
@@ -120,4 +124,32 @@ main > .my-col-right{
     flex-basis: 80%;
     padding: .4rem;
     border: none;
+}
+
+.my-col-left > .chats{
+    height: 70%;
+    overflow-y: auto;
+}
+
+.chats > .chat{
+    padding: .5rem;
+    border-bottom: 1px solid rgb(242, 242, 242);
+}
+
+.chats > .chat.active{
+    background-color: #e9ebeb;
+}
+
+.chats > .chat .chat-user-img{
+	width: 55px;
+	height: 55px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-right: .9rem;
+}
+
+.chat .preview-message, .chat-date{
+    font-size: .7rem;
+    color: #b1b1b1;
+    font-weight: 500;
 }
