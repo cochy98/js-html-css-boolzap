@@ -83,11 +83,12 @@ main > .my-col-right{
     font-size: 1.3rem;
     color: #b1b1b1;
     padding: .4rem;
+    cursor: pointer;
 }
 
 .my-col-left .box-info-control{
     background-color: #8edafc;
-    padding: .65rem;
+    padding: .65rem 0 .65rem 1rem;
     font-size: .8rem;
 }
 
@@ -130,7 +131,7 @@ main > .my-col-right{
 }
 
 .chats > .chat{
-    padding: .5rem;
+    padding: .5rem .5rem .5rem 1rem;
     border-top: 1px solid rgb(242, 242, 242);
 }
 
@@ -153,6 +154,37 @@ main > .my-col-right{
 }
 
 .my-col-right > .chat-history{
-    height: calc(100% - 66px);
+    height: calc(100% - 66px - 57.6px);
     background-image: url(../img/mine.jpg);
+}
+
+.my-col-right > .insert-message{
+    background-color: #f3eeea;
+    padding: .5rem;
+}
+
+.insert-message > .add-emoticons,
+.insert-message > .action{
+    flex-basis: 10%;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #6b7376;
+    cursor: pointer;
+}
+
+.insert-message > input{
+    flex-basis: 80%;
+    border: none;
+    padding: .8rem;
+    border-radius: .4rem;
+}
+
+.my-col-right > .chat-history{
+    overflow-y: auto;
+    padding: 3rem 6rem 1.5rem;
+}
+
+.chat-open-profile .log{
+	color: #929191;
+	font-size: .8rem;
 }
