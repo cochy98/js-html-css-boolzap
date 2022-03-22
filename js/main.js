@@ -179,7 +179,7 @@ const app = new Vue(
                     this.newMessage = this.newMessage.trim().charAt(0).toUpperCase() + this.newMessage.trim().slice(1);
 
                     // Costruisco l'oggetto messaggio
-                    const objectMessage = {
+                    let objectMessage = {
                         date: dayjs().format(),
                         message: this.newMessage,
                         status: 'sent'
@@ -190,6 +190,19 @@ const app = new Vue(
 
                     // Cancello l'input di testo
                     this.newMessage = '';
+
+                    // Attendo 1secondo e ricevo la risposta
+                    setTimeout(() => {
+                        // Costruisco l'oggetto messaggio risposta
+                        objectMessage = {
+                            date: dayjs().format(),
+                            message: 'Ok!',
+                            status: 'receive'
+                        };
+
+                        // E lo inserisco nell'array
+                        this.contacts[this.chatActive].messages.push(objectMessage);
+                    }, 1000);
                 } else{
                     console.log('Il messaggio è vuoto!');
                 }
