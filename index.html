@@ -87,8 +87,11 @@
             </div>
 
             <!-- Visualizzo tutta la chat aperta -->
-            <div class="chat-history">
-
+            <div class="chat-history d-flex flex-column">
+                <div class="box-message d-flex flex-column" v-for="element in contacts[chatActive].messages" :class="(element.status == 'sent') ? 'sent' : 'receive' ">
+                    <p>{{ element.message }}</p>
+                    <span>{{ element.date }}</span>
+                </div> 
             </div>
 
             <div class="insert-message d-flex align-center">

@@ -15,6 +15,7 @@ body{
 }
 
 .d-flex{display: flex;}
+.flex-column{flex-direction: column;}
 .justify-between{justify-content: space-between;}
 .justify-center{justify-content: center;}
 .align-center{align-items: center;}
@@ -162,6 +163,8 @@ main > .my-col-right{
 .my-col-right > .chat-history{
     height: calc(100% - 66px - 57.6px);
     background-image: url(../img/mine.jpg);
+    overflow-y: auto;
+    padding: 3rem 6rem 1.5rem;
 }
 
 .my-col-right > .insert-message{
@@ -185,12 +188,32 @@ main > .my-col-right{
     border-radius: .4rem;
 }
 
-.my-col-right > .chat-history{
-    overflow-y: auto;
-    padding: 3rem 6rem 1.5rem;
-}
-
 .chat-open-profile .log{
 	color: #929191;
 	font-size: .8rem;
+}
+
+.chat-history > .box-message{
+    padding: .9rem .5rem .3rem .9rem;
+    font-size: .9rem;
+	width: 330px;
+	margin-bottom: .9rem;
+	border-radius: .6rem;
+}
+
+.chat-history > .box-message.sent{
+    align-self: end;
+    background-color: #d5f9ba;
+}
+
+.chat-history > .box-message.receive{
+    align-self: flex-start;
+    background-color: white;
+}
+
+.chat-history > .box-message > span{
+    color: #929191;
+    align-self: flex-end;
+    font-size: .65rem;
+    padding-top: .2rem;
 }
