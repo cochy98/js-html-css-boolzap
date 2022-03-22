@@ -56,7 +56,7 @@
             </div>
 
             <div class="chats">
-                <div class="chat d-flex justify-between" id="chat-1" v-for="element in contacts">
+                <div class="chat d-flex justify-between" v-for="(element, index) in contacts" :class="(index == chatActive) ? 'active' : '' " @click="switchActive(index)">
                     <div class="d-flex">
                         <img class="chat-user-img" :src="`img/avatar${element.avatar}.jpg`" alt="Img profile chat 1">
                         <div class="chat-description">
@@ -73,9 +73,9 @@
         <div class="my-col-right">
             <div class="chat-open-bar d-flex justify-between align-center">
                 <div class="chat-open-profile d-flex align-center">
-                    <img src="img/avatar_1.jpg" alt="profile picture">
+                    <img :src="`img/avatar${contacts[chatActive].avatar}.jpg`" alt="profile picture">
                     <div class="chat-open-profile-descr">
-                        <p class="fw-500">Michele</p>
+                        <p class="fw-500">{{ contacts[chatActive].name }}</p>
                         <p class="log">Ultimo accesso oggi alle 12:00</p>
                     </div>
                 </div>
@@ -86,6 +86,7 @@
                 </div>
             </div>
 
+            <!-- Visualizzo tutta la chat aperta -->
             <div class="chat-history">
 
             </div>

@@ -134,10 +134,15 @@ main > .my-col-right{
 .chats > .chat{
     padding: .5rem .5rem .5rem 1rem;
     border-top: 1px solid rgb(242, 242, 242);
+    cursor: pointer;
 }
 
 .chats > .chat.active{
     background-color: #e9ebeb;
+}
+
+.chats > .chat:hover{
+    background-color: #ecf1f1;
 }
 
 .chats > .chat .chat-user-img{

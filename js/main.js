@@ -165,9 +165,12 @@ const app = new Vue(
                     ],
                 }
             ],
+            chatActive: 0,
         },
         methods: {
-            
+            switchActive(index){
+                this.chatActive = index;
+            }
         }
     }
 );
