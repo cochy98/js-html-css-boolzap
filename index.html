@@ -11,6 +11,8 @@
     <!-- Font-Awesome cdn v6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
     <!-- Vue js 2.6 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
@@ -98,7 +100,7 @@
                 <div class="add-emoticons">
                     <i class="fa-regular fa-face-smile"></i>
                 </div>
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keypress.enter="sentMessage()">
                 <div class="action">
                     <i class="fa-solid fa-microphone"></i>
                 </div>

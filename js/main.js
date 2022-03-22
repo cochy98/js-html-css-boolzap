@@ -166,10 +166,33 @@ const app = new Vue(
                 }
             ],
             chatActive: 0,
+            newMessage: ''
         },
         methods: {
             switchActive(index){
                 this.chatActive = index;
+            },
+            sentMessage(){
+                // Se il messaggio ricevuto non è vuoto
+                if(this.newMessage.trim() != ''){
+                    // Elimino gli spazi vuoti all'inizio e alla fine della stringa e trasformo la prima lettera in maiuscolo
+                    this.newMessage = this.newMessage.trim().charAt(0).toUpperCase() + this.newMessage.trim().slice(1);
+
+                    // Costruisco l'oggetto messaggio
+                    const objectMessage = {
+                        date: dayjs().format(),
+                        message: this.newMessage,
+                        status: 'sent'
+                    };
+
+                    // E lo inserisco nell'array
+                    this.contacts[this.chatActive].messages.push(objectMessage);
+
+                    // Cancello l'input di testo
+                    this.newMessage = '';
+                } else{
+                    console.log('Il messaggio è vuoto!');
+                }
             }
         }
     }
