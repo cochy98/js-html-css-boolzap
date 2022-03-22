@@ -30,7 +30,7 @@
                 <div class="user-bar d-flex justify-between align-center">
                     <div class="user-bar-profile d-flex align-center">
                         <img src="img/avatar_io.jpg" alt="profile picture">
-                        <span class="fw-500">User Name</span>
+                        <span class="fw-500">Sofia</span>
                     </div>
                     <div class="user-bar-controls">
                         <i class="fa-solid fa-circle-notch"></i>
@@ -61,11 +61,11 @@
                         <img class="chat-user-img" :src="`img/avatar${element.avatar}.jpg`" alt="Img profile chat 1">
                         <div class="chat-description">
                             <p class="fw-500">{{ element.name }}</p>
-                            <p class="preview-message">Ultimo messaggio inviato</p>
+                            <p class="preview-message">{{ element.messages[element.messages.length -1].message }}</p>
                         </div>
                     </div>
                     <div class="chat-date">
-                        <p>12:00</p>
+                        <p>{{ element.messages[element.messages.length -1].date }}</p>
                     </div>
                 </div>  
             </div>

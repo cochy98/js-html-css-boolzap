@@ -118,6 +118,7 @@ main > .my-col-right{
 .input-search > .search-icon{
     flex-basis: 20%;
     color: #b1b1b1;
+    cursor: pointer;
 }
 
 .input-search > input{
