@@ -166,7 +166,8 @@ const app = new Vue(
                 }
             ],
             chatActive: 0,
-            newMessage: ''
+            newMessage: '',
+            inputName: ''
         },
         methods: {
             switchActive(index){
@@ -205,6 +206,22 @@ const app = new Vue(
                     }, 1000);
                 } else{
                     console.log('Il messaggio è vuoto!');
+                }
+            },
+            searchByName(){
+                // Se non ho inserito SOLO spazi vuoti
+                if(this.inputName.trim() != ''){
+                    // Ciclo sull'array dei contatti
+                    this.contacts.forEach( (element,i) => {
+                        // controllo se l'input inserito è incluso nel contatto corrente. In tal caso il contatto sarà visibile
+                        // NOTA bene: 'includes() restituisce 'true' se incluso, 'false' altrimenti.
+                        element.visible = element.name.toLowerCase().includes(this.inputName.trim().toLowerCase());
+                        //this.chatActive = i;
+                    });
+                    // Resetto il campo di input
+                    this.inputName = '';
+                } else{
+                    console.log('stringa vuota!');
                 }
             }
         }

@@ -53,12 +53,12 @@
                     <div class="search-icon d-flex justify-center align-center">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="inputName" @keypress.enter="searchByName()">
                 </div>
             </div>
 
             <div class="chats">
-                <div class="chat d-flex justify-between" v-for="(element, index) in contacts" :class="(index == chatActive) ? 'active' : '' " @click="switchActive(index)">
+                <div class="chat d-flex justify-between" v-for="(element, index) in contacts" v-if="element.visible" :class="(index == chatActive) ? 'active' : '' " @click="switchActive(index)">
                     <div class="d-flex">
                         <img class="chat-user-img" :src="`img/avatar${element.avatar}.jpg`" alt="Img profile chat 1">
                         <div class="chat-description">
