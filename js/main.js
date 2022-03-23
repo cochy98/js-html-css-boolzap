@@ -167,7 +167,12 @@ const app = new Vue(
             ],
             chatActive: 0,
             newMessage: '',
-            inputName: ''
+            inputName: '',
+            filterContacts: []
+        },
+        mounted(){
+            console.log('ciao');
+            this.filterContacts = this.contacts.slice();
         },
         methods: {
             switchActive(index){
@@ -181,7 +186,7 @@ const app = new Vue(
 
                     // Costruisco l'oggetto messaggio
                     let objectMessage = {
-                        date: dayjs().format(),
+                        date: dayjs().format('DD/MM/YYYY H:mm:ss'),
                         message: this.newMessage,
                         status: 'sent'
                     };
@@ -196,7 +201,7 @@ const app = new Vue(
                     setTimeout(() => {
                         // Costruisco l'oggetto messaggio risposta
                         objectMessage = {
-                            date: dayjs().format(),
+                            date: dayjs().format('DD/MM/YYYY H:mm:ss'),
                             message: 'Ok!',
                             status: 'receive'
                         };
@@ -213,17 +218,15 @@ const app = new Vue(
                 if(this.inputName.trim() != ''){
                     // Ciclo sull'array dei contatti
                     this.contacts.forEach( (element,i) => {
-                        // controllo se l'input inserito è incluso nel contatto corrente. In tal caso il contatto sarà visibile
-                        // NOTA bene: 'includes() restituisce 'true' se incluso, 'false' altrimenti.
                         element.visible = element.name.toLowerCase().includes(this.inputName.trim().toLowerCase());
-                        //this.chatActive = i;
                     });
-                    // Resetto il campo di input
-                    this.inputName = '';
                 } else{
                     console.log('stringa vuota!');
+                    this.contacts.forEach( (element) => {
+                        element.visible = true;
+                    });
                 }
-            }
+            },
         }
     }
 );

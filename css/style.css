@@ -160,6 +160,10 @@ main > .my-col-right{
     font-weight: 500;
 }
 
+.chat > .chat-date{
+    text-align: right;
+}
+
 .my-col-right > .chat-history{
     height: calc(100% - 66px - 57.6px);
     background-image: url(../img/mine.jpg);
@@ -199,6 +203,7 @@ main > .my-col-right{
 	width: 330px;
 	margin-bottom: .9rem;
 	border-radius: .6rem;
+    position: relative;
 }
 
 .chat-history > .box-message.sent{
@@ -216,4 +221,18 @@ main > .my-col-right{
     align-self: flex-end;
     font-size: .65rem;
     padding-top: .2rem;
+}
+
+.chat-history > .box-message > .dropdown-menu{
+	display: none;
+	position: absolute;
+	top: 2rem;
+	background-color: gray;
+	list-style-type: none;
+	padding: .5rem;
+}
+
+.chat-history > .box-message:hover > .dropdown-menu{
+    display: block;
+    z-index: 2;
 }
