@@ -227,9 +227,18 @@ main > .my-col-right{
 	display: none;
 	position: absolute;
 	top: 2rem;
-	background-color: gray;
+	background-color: white;
 	list-style-type: none;
 	padding: .5rem;
+    box-shadow: 0 0 7px 1px black;
+}
+
+.chat-history > .box-message > .dropdown-menu > li {
+	padding: .3rem;
+}
+
+.chat-history > .box-message > .dropdown-menu > li > a {
+	color: black;
 }
 
 .chat-history > .box-message:hover > .dropdown-menu{

@@ -88,13 +88,12 @@
 
             <!-- Visualizzo tutta la chat aperta -->
             <div class="chat-history d-flex flex-column">
-                <div class="box-message d-flex flex-column" v-for="element in contacts[chatActive].messages" :class="(element.status == 'sent') ? 'sent' : 'receive' ">
+                <div class="box-message d-flex flex-column" v-for="(element, index) in contacts[chatActive].messages" :class="(element.status == 'sent') ? 'sent' : 'receive' ">
                     <p>{{ element.message }}</p>
                     <span>{{ element.date }}</span>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li>Info messaggio</li>
+                        <li><a class="dropdown-item" href="#" @click="deleteMessage(index)">Cancella messaggio</a></li>
                     </ul>
                 </div> 
             </div>

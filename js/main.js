@@ -171,7 +171,6 @@ const app = new Vue(
             filterContacts: []
         },
         mounted(){
-            console.log('ciao');
             this.filterContacts = this.contacts.slice();
         },
         methods: {
@@ -227,6 +226,10 @@ const app = new Vue(
                     });
                 }
             },
+            deleteMessage(indexMessage){
+                console.log('lo cancello');
+                this.contacts[this.chatActive].messages.splice(this.contacts[this.chatActive].messages[indexMessage], 1);
+            }
         }
     }
 );
